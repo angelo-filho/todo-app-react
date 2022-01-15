@@ -7,5 +7,5 @@ export const Container = styled.div`
 `;
 
 export const P = styled.p`
-  color: #fff;
+  color: ${(props) => props.theme.emptyMessageColor};
 `;

@@ -14,6 +14,7 @@ export const darkTheme = {
   checkButtonColor: '#20D77F',
   slideButtonColor: '#fff',
   slideButtonCircleColor: '#FF4D2A',
+  emptyMessageColor: '#fff',
 };
 
 export const lightTheme = {
@@ -32,4 +33,5 @@ export const lightTheme = {
   checkButtonColor: '#20D77F',
   slideButtonColor: '#E1E1E1',
   slideButtonCircleColor: '#FF4D2A',
+  emptyMessageColor: '#000',
 };
