@@ -1,6 +1,7 @@
 import { AnimatePresence } from 'framer-motion';
 import { useCallback, useContext, useEffect, useState } from 'react';
 import { ThemeProvider } from 'styled-components';
+import EmptyMessage from '../../components/EmptyMessage';
 import MainInputText from '../../components/MainInputText';
 import SlideButton from '../../components/SlideButton';
 import Task from '../../components/Task';
@@ -19,8 +20,8 @@ function App() {
   }, [getTasks]);
 
   useEffect(() => {
-    setToggleTheme(getThemeFromLocalStore());
-    console.log(getThemeFromLocalStore());
+    const defaultTheme = getThemeFromLocalStore();
+    setToggleTheme(defaultTheme == null ? true : defaultTheme);
   }, []);
 
   const handleClick = useCallback(() => {
@@ -33,12 +34,14 @@ function App() {
   }, []);
 
   return (
-    <ThemeProvider theme={toggleTheme ? darkTheme : lightTheme}>
+    <ThemeProvider theme={toggleTheme ? darkTheme : toggleTheme == null ? darkTheme : lightTheme}>
       <Wrapper>
         <Container>
           <SlideButton handleClick={handleClick} active={toggleTheme == null ? true : toggleTheme} />
 
           <MainInputText />
+
+          {tasks.length == 0 && <EmptyMessage />}
 
           <AnimatePresence>
             {tasks.map((task) => (

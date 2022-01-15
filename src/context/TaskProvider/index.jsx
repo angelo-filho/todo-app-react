@@ -51,7 +51,7 @@ export const TasksProvider = ({ children }) => {
   }, []);
 
   useEffect(() => {
-    setTasks(null || getTasksFromLocalStore());
+    setTasks(getTasksFromLocalStore() || []);
   }, []);
 
   return (

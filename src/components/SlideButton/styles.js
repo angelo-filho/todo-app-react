@@ -20,6 +20,10 @@ export const Button = styled(motion.button)`
   background-color: ${(props) => props.theme.slideButtonColor};
   border: none;
   border-radius: 100px;
+
+  :hover {
+    cursor: pointer;
+  }
 `;
 
 export const Circle = styled(motion.div)`
