@@ -49,4 +49,10 @@ export const Container = styled.button`
       `
     );
   }}
+
+  @media screen and (max-width: 500px) {
+    & {
+      width: 45px;
+    }
+  }
 `;

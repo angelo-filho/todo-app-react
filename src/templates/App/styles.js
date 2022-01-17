@@ -17,8 +17,8 @@ export const Container = styled.section`
   position: relative;
   align-items: center;
   justify-content: center;
-  width: min(500px, 90%);
-  height: 600px;
+  width: min(500px, 100%);
+  height: min(600px);
   padding: 30px 25px;
 
   background-color: ${(props) => props.theme.containerColor};
@@ -27,4 +27,12 @@ export const Container = styled.section`
   overflow-x: hidden;
 
   transition: background 0.2s;
+
+  @media screen and (max-width: 500px) {
+    & {
+      height: 100%;
+
+      border-radius: 0px;
+    }
+  }
 `;

@@ -22,4 +22,10 @@ export const Input = styled.input`
 
   font-size: 0.875rem;
   font-weight: 400;
+
+  @media screen and (max-width: 500px) {
+    & {
+      width: calc(100% - 45px);
+    }
+  }
 `;

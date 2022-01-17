@@ -32,6 +32,12 @@ export const Input = styled.input`
     color: ${(props) => props.theme.taskFocusedFontColor};
     cursor: text;
   }
+
+  @media screen and (max-width: 500px) {
+    & {
+      width: calc(100% - 90px);
+    }
+  }
 `;
 
 export const FakeInput = styled.div`
@@ -48,5 +54,12 @@ export const FakeInput = styled.div`
 
   :hover {
     cursor: pointer;
+  }
+
+  @media screen and (max-width: 500px) {
+    & {
+      right: 45px;
+      width: 45px;
+    }
   }
 `;
